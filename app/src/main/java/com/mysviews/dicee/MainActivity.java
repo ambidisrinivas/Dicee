@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button rollButton = (Button) findViewById(R.id.rollButton);
         final ImageView leftDice = (ImageView) findViewById(R.id.image_leftDice);
         final ImageView rightDice = (ImageView) findViewById(R.id.image_rightDice);
+        final TextView textView = (TextView) findViewById(R.id.Done);
         final int[] diceArray={R.drawable.dice1,
                 R.drawable.dice2,
                 R.drawable.dice3,
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 num = randomNumberGenerator.nextInt(6);
                 Log.d("Dicee","the number generated is :"+num);
                 rightDice.setImageResource(diceArray[num]);
+                textView.setText("Done");
             }
         });
     }
